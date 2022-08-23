@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\SAE_Portfolio_2\Currency\Data\Coins.cs" />
     <Compile Include="Assets\Scripts\SAE_Portfolio_2\UI\OptionsPanel.cs" />
     <Compile Include="Assets\Scripts\SAE_Portfolio_2\UI\PausePanel.cs" />
+    <Compile Include="Assets\Scripts\SAE_Portfolio_2\GravityGun\GravityGun.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -735,6 +736,18 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{B5F26FAA-8B39-6262-7445-44811DC3B260}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
+      <Project>{27095DA5-F7E7-E834-DB70-7900D03485CA}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
+      <Project>{3A8A22B1-3210-A6EA-E4AA-7DAAC5A0728F}</Project>
+      <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
+      <Project>{EBEF3BD5-646E-729A-F5A4-FA976BF1EC11}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

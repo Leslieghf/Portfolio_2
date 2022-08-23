@@ -13,5 +13,7 @@ namespace SAE_Portfolio_2.Movement.FPS.Data
         public float gravity;
         public float lookSpeed;
         public float lookXLimit;
+        public float bobbingSpeed;
+        public float bobbingAmount;
     } 
 }

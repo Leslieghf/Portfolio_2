@@ -9,6 +9,7 @@ namespace SAE_Portfolio_2.Movement.JumpRun.Data
     {
         public float Speed;
         public float JumpForce;
-        public bool canDoubleJump;
+        public bool CanDoubleJump;
+        public float CoyoteTime;
     } 
 }

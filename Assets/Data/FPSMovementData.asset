@@ -17,4 +17,6 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   lookSpeed: 2
-  lookXLimit: 45
+  lookXLimit: 60
+  bobbingSpeed: 14
+  bobbingAmount: 0.05

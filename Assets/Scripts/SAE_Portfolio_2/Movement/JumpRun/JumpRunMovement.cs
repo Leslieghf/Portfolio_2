@@ -8,28 +8,49 @@ namespace SAE_Portfolio_2.Movement.JumpRun
 
     public class JumpRunMovement : MonoBehaviour
     {
+        private enum State
+        {
+            Grounded,
+            Airborne,
+            Coyote,
+            Jumped,
+            DoubleJumped
+        }
+        private State state;
         [SerializeField] private JumpRunMovementData data;
         [SerializeField] private LayerMask groundCheckLayerMask;
         [SerializeField] private new Rigidbody2D rigidbody;
         [SerializeField] private new BoxCollider2D collider;
-        private bool hasDoubleJumped;
+        private float coyoteTimer;
 
         void Update()
         {
             if (IsGrounded())
             {
-                hasDoubleJumped = false;
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Jump();
-                }
+                state = State.Grounded;
+                coyoteTimer = 0.0f;
             }
-            else if (!hasDoubleJumped)
+            else if (coyoteTimer < data.CoyoteTime)
+            {
+                state = State.Coyote;
+                coyoteTimer += Time.deltaTime;
+            }
+
+            if (state == State.Grounded || state == State.Coyote)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    hasDoubleJumped = true;
-                    Jump(); 
+                    Jump();
+                    state = State.Jumped;
+                }
+            }
+
+            if (state == State.Jumped && data.CanDoubleJump)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Jump();
+                    state = State.DoubleJumped;
                 }
             }
         }
